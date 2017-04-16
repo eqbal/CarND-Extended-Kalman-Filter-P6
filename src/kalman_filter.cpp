@@ -3,6 +3,9 @@
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
+using namespace std;
+#define PI 3.14159265
+
 KalmanFilter::KalmanFilter() {}
 
 KalmanFilter::~KalmanFilter() {}
