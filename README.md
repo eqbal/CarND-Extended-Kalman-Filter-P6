@@ -21,6 +21,16 @@ The main goal of the project is to apply Extended Kalman Filter to fuse data fro
   * Mac: same deal as make - [install Xcode command line tools]((https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
+## Structure and Files
+
+- `scr` a directory with the project code:
+  - `main.cpp` - reads in data, calls a function to run the Kalman filter, calls a function to calculate RMSE
+  - `FusionEKF.cpp` - initializes the filter, calls the predict function, calls the update function
+  - `kalman_filter.cpp`- defines the predict function, the update function for lidar, and the update function for radar
+  - `tools.cpp` - a function to calculate RMSE and the Jacobian matrix
+- `data`  a directory with two input files, provided by Udacity
+- `Docs` a directory with files formats description
+
 ## Basic Build Instructions
 
 1. Clone this repo.
@@ -51,6 +61,32 @@ Accuracy - RMSE:
  0.533212
  0.544193
 ```
+
+To sum it up for:
+
+- `sample-laser-radar-measurement-data-1.txt`
+
+var | RMSE
+----|-----
+px  | 0.065
+py  | 0.060
+vx  | 0.533
+vy  | 0.544
+
+Visualization:
+![data1][assets/data_1_graph.png]
+
+- `sample-laser-radar-measurement-data-2.txt`
+
+var | RMSE
+----|-----
+px  | 0.185496
+py  | 0.190302
+vx  | 0.476754
+vy  | 0.804469
+
+Visualization:
+![data1][assets/data_2_graph.png]
 
 ## Editor Settings
 
