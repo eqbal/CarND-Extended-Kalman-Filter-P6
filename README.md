@@ -2,6 +2,11 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Intro
+
+[This Project](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project) is the sixth task (Project 1 / Term 2) of the Udacity Self-Driving Car Nanodegree program.
+
+The main goal of the project is to apply Extended Kalman Filter to fuse data from LIDAR and Radar sensors of a self driving car using C++.
 
 ## Dependencies
 
@@ -25,6 +30,27 @@ Self-Driving Car Engineer Nanodegree Program
 4. Run it: `./ExtendedKF path/to/input.txt path/to/output.txt`. You can find
    some sample inputs in 'data/'.
     - eg. `./ExtendedKF ../data/sample-laser-radar-measurement-data-1.txt output.txt`
+
+## Sample Output
+
+```
+eqbal@Ekis-Krypton ~/code/udacity/CarND-Extended-Kalman-Filter-Project (master●)$ ./build/ExtendedKF data/sample-laser-radar-measurement-data-2.txt ../output2.txt         [system]
+Extended Kalman Filter Algorithm:
+CalculateJacobian () - Error - Division by Zero
+Accuracy - RMSE:
+0.185496
+0.190302
+0.476754
+0.804469
+
+eqbal@Ekis-Krypton ~/code/udacity/CarND-Extended-Kalman-Filter-Project (master●)$ ./build/ExtendedKF data/sample-laser-radar-measurement-data-1.txt ../output1.txt         [system]
+Extended Kalman Filter Algorithm:
+Accuracy - RMSE:
+0.0651648
+0.0605379
+ 0.533212
+ 0.544193
+```
 
 ## Editor Settings
 
