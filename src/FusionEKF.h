@@ -44,6 +44,9 @@ private:
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
   Eigen::MatrixXd Hj_;
+
+  float sigma_ax = 9;
+  float sigma_ay = 9;
 };
 
 #endif /* FusionEKF_H_ */

@@ -5,6 +5,7 @@ using Eigen::VectorXd;
 
 using namespace std;
 #define PI 3.14159265
+#define ZERO 0.0001
 
 KalmanFilter::KalmanFilter() {}
 
@@ -55,12 +56,12 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   float phi = 0;
   float rho_dot = 0;
 
-  if(px < 0.0001 && py < 0.0001) //both px and py are zero
+  if(px < ZERO && py < ZERO) //both px and py are zero
     phi = 0;
   else
     phi = atan2(py, px);
 
-  if(rho > 0.0001) // if rho is zero leave rho_dot as zero
+  if(rho > ZERO) // if rho is zero leave rho_dot as zero
     rho_dot = (px*vx + py*vy)/rho;
 
 
@@ -75,12 +76,11 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 
   MatrixXd K = PHt * Si;
 
-  //new estimate
-  //Adjust phi value, it should between -PI and PI
   if(y[1] > PI)
     y[1] = PI;
   if(y[1] < -PI)
     y[1] = -PI;
+
   x_ = x_ + (K * y);
   long x_size = x_.size();
   MatrixXd I = MatrixXd::Identity(x_size, x_size);
