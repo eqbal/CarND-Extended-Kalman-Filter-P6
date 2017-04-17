@@ -56,14 +56,13 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   float phi = 0;
   float rho_dot = 0;
 
-  if(px < ZERO && py < ZERO) //both px and py are zero
+  if (fabs(px) < ZERO && fabs(py) < ZERO)
     phi = 0;
   else
     phi = atan2(py, px);
 
   if(rho > ZERO) // if rho is zero leave rho_dot as zero
     rho_dot = (px*vx + py*vy)/rho;
-
 
   VectorXd z_pred(3);
   z_pred << rho, phi, rho_dot;
