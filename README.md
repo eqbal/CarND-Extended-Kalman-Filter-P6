@@ -73,8 +73,9 @@ py  | 0.060
 vx  | 0.533
 vy  | 0.544
 
-Visualization:
-![data1][assets/data_1_graph.png]
+Visualisation:
+
+![data1](assets/data_1_graph.png)
 
 - `sample-laser-radar-measurement-data-2.txt`
 
@@ -85,8 +86,9 @@ py  | 0.190302
 vx  | 0.476754
 vy  | 0.804469
 
-Visualization:
-![data1][assets/data_2_graph.png]
+Visualisation:
+
+![data1](assets/data_2_graph.png)
 
 ## Editor Settings
 
